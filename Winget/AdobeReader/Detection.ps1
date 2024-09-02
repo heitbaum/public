@@ -11,7 +11,7 @@ cd $wingetpath
 
 $InstalledApps = .\winget.exe list --id $PackageName
 
-if ($InstalledApps) {
+if ($InstalledApps -match $PackageName) {
     Write-Host "$($PackageName) is installed"
     Exit 0
 }
